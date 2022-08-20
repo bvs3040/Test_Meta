@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url(./fonts/static/Montserrat-Regular.ttf);
+    src: url(./fonts/static/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #E5E5E5;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2B2A29;
+}
+
+button, span, p{
+    line-height: 18px;
+}
+
+span, p{
+    font-size: 14px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 614px;   
+    padding: 42px;
+    background-color:rgba(255, 255, 254, 1);  
+    box-sizing: border-box; 
+}
+
+.editing form{
+    max-width: 704px;
+    width: 100vw;
+    
+}
+
+span{
+    display: block;
+    margin-top: 25px;    
+}
+
+input{
+    width: 80%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;     
+}
+
+input:focus{ 
+    border: 1px solid ;
+    outline:#2B2A29;   
+}
+
+p{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;  
+    color: #878787;    
+    margin: 0;
+}
+
+h1{   
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    color: black;
+    margin: 0;
+}
+
+h2{
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 32px;
+    margin: 0;
+}
+
+button{
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    background: #2B2A29;
+    border: #2B2A29;
+    border-radius: 2px;
+    width: 100%;
+    height: 50px;   
+    margin: 44px 0 17px;
+}
+
+.editing button{
+    max-width: 235px;
+    margin: 39px 0 -23px;
+}
+
+button, label, input:hover{
+    cursor: pointer;
+}
+
+button:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.7); ;   
+}
+
+button:active{
+    color: #2B2A29;
+    background: rgba(255, 255, 255, 1);
+}
+
+a{
+    color: #2B2A29;
+}
+
+.editing a{
+    margin-top: 55px;
+}
+
+hr{
+    color: #2B2A29; /* Устанавливаем цвет линии */
+	background-color: #2B2A29; /* Для кроссбраузерности (Opera и Mozilla Firefox) */
+	height: 1px; 
+	border: none; /* Отменяем отображение границы (в браузере Firefox) */
+    width: 100%;  
+    margin: 0; 
+}
+
+.hr-transparency{
+    color: #F2F2F2; 
+	background-color: #F2F2F2;
+    margin: 14px 0 18px;
+}
+
+.input-block{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3px;
+}
+
+.input-icon{
+    /*background-image: url(./images/icon_done.svg);*/
+    background-color: brown;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+.invisible{
+    display: none;
+}
+
