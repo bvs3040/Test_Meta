@@ -33,6 +33,7 @@ editingLink.addEventListener ('click', openAuthorization );
 
 //createTestUser(); // создание тестового юзера
 
+//поля для сообщений валидации
 const inputFields = document.querySelectorAll('input');
 const errorMessageFields = document.querySelectorAll('.errorMessage');
 const errorMessageLines = document.querySelectorAll('.inpHr');
@@ -40,6 +41,7 @@ const inputIcons = document.querySelectorAll('.input-icon');
 
 for (let i = 0; i < inputFields.length; i++) {
 
+//иконки глаза, скрыть/открыть пароль
     if (inputFields[i].classList.contains("password")) {
         inputIcons[i].addEventListener ('click', () => {
             inputIcons[i].classList.toggle ('input-icon__eye');
@@ -51,6 +53,7 @@ for (let i = 0; i < inputFields.length; i++) {
         });
     };
 
+//блок сообщений валидации
     inputFields[i].addEventListener ('blur', () =>{
         const inputFieldValue = inputFields[i].value;
 
@@ -128,8 +131,7 @@ for (let i = 0; i < inputFields.length; i++) {
 //авторизация юзера
 authForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    
-    
+       
     const login = authForm.elements.login.value;
     const password = authForm.elements.password.value;
     if (authUser(login, password)){
