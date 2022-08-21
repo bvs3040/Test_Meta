@@ -44,10 +44,9 @@ form{
     box-sizing: border-box; 
 }
 
-.editing form{
+.editingFormsBlock form{
     max-width: 704px;
-    width: 100vw;
-    
+    width: 100vw;   
 }
 
 span{
@@ -64,8 +63,8 @@ input{
 }
 
 input:focus{ 
-    border: 1px solid ;
-    outline:#2B2A29;   
+    border: none;
+    outline: none;   
 }
 
 p{
@@ -106,7 +105,7 @@ button{
     margin: 39px 0 -23px;
 }
 
-button, label, input:hover{
+button, label, input, .input-icon:hover{
     cursor: pointer;
 }
 
@@ -136,6 +135,11 @@ hr{
     margin: 0; 
 }
 
+.redLine{
+    color: #D60303;
+    background-color: #D60303;;
+}
+
 .hr-transparency{
     color: #F2F2F2; 
 	background-color: #F2F2F2;
@@ -149,14 +153,62 @@ hr{
 }
 
 .input-icon{
-    /*background-image: url(./images/icon_done.svg);*/
-    background-color: brown;
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
 }
 
+.input-icon__done{
+    background-image: url(./images/icon_done.svg);
+}
+
+.input-icon__close{
+    background-image: url(./images/icon_close.svg);
+}
+
+.input-icon__eye{
+    background-image: url(./images/icon_eye.svg);
+}
+
+.input-icon__eye2{
+    background-image: url(./images/icon_eye2.svg);
+}
+
 .invisible{
     display: none;
 }
+
+.errorMessage{
+    color: #D60303;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@media  screen and (max-width: 639px){
+    h1{
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    h2{
+        font-size: 18px;
+        line-height: 24px;
+        color: black;
+    }
+
+    form, .editingFormsBlock form{
+        width: 100vw;
+        max-width: 320px;   
+        padding: 24px 16px;
+    }
+
+    button{  
+        margin: 30px 0 17px;
+    }
+
+    a{
+        font-size: 14px;
+        line-height: 18px;
+    }
+ }
 

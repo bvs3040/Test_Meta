@@ -9,6 +9,8 @@
 </head>
 <body>
     <div class="wrapper">
+
+    <!--Форма авторизации-->
         <form class="authorization">
             <h1 class="">
                 Авторизация
@@ -16,23 +18,24 @@
             <label class="">
                 <span>Логин*</span>
                 <div class="input-block">
-                    <input class="" name="login" type="text" value="" required>
-                    <div class="input-icon">
-                        
+                    <input class="inputLogin" name="login" type="text" value="" required pattern="[a-zA-Z1-9]{6,20}"  >
+                    <div class="input-icon"> 
+
                     </div>
                 </div>
-                <hr class="">
+                <hr class="inpHr">
+                <div class="errorMessage"></div>
             </label>
-            <label class="">
+            <label class="" for="avtPassword">
                 <span>Пароль*</span>
-                <div class="input-block">
-                    <input class="" name="password" type="password" value="" required>
-                    <div class="input-icon">
-                        
-                    </div>
-                </div>
-                <hr class="">
             </label>
+            <div class="input-block">
+                <input id="avtPassword" class="password" name="password" type="password" value="" required pattern="[\D0-9]{6,}">
+                <div class="input-icon input-icon__eye"></div>
+            </div>
+            <hr class="inpHr">
+            <div class="errorMessage"></div>
+            
             <button class="">
                 Авторизоваться
             </button>
@@ -44,6 +47,7 @@
             </p>
         </form>
 
+    <!--Форма авторизации-->
         <form class="registration invisible">
             <h1 class="">
                 Регистрация
@@ -51,53 +55,54 @@
             <label class="">
                 <span>Логин*</span>
                 <div class="input-block">
-                    <input class="" name="login" type="text" value="" required>
+                    <input class="inputLogin" name="login" type="text" value="" required  pattern="[a-zA-Z1-9]{6,20}" autofocus>
                     <div class="input-icon">
                         
                     </div>
                 </div>
-                <hr class="">
+                <hr class="inpHr">
+                <div class="errorMessage"></div>
             </label>
             <label class="">
                 <span>E-mail</span>
                 <div class="input-block">
-                    <input class="" name="email" type="email" value="">
+                    <input class="email" name="email" type="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9-]+@[a-z0-9\.-]+\.[a-z]{2,4}" >
                     <div class="input-icon">
                         
                     </div>
                 </div>
-                <hr class="">
+                <hr class="inpHr">
+                <div class="errorMessage"></div>
             </label>
             <label class="">
                 <span>Телефон</span>
                 <div class="input-block">
-                    <input class="" name="phone" type="tel" value="">
+                    <input class="tel" name="phone" type="tel" value="" placeholder="+7 (999) 999 99 99" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
                     <div class="input-icon">
                         
                     </div>
                 </div>
-                <hr class="">
+                <hr class="inpHr">
+                <div class="errorMessage"></div>
             </label>
-            <label class="">
+            <label class="" for="regPassword">
                 <span>Пароль*</span>
-                <div class="input-block">
-                    <input class="" name="password" type="password" value="" required>
-                    <div class="input-icon">
-                        
-                    </div>
-                </div>
-                <hr class="">
             </label>
-            <label class="">
+            <div class="input-block">
+                <input id="regPassword" class="password" name="password" type="password" value="" required  pattern="[\D0-9]{6,}">
+                <div class="input-icon input-icon__eye"></div>
+            </div>
+            <hr class="inpHr">
+            <div class="errorMessage"></div>
+            <label class="" for="regRepPassword">
                 <span>Повторить пароль*</span>
-                <div class="input-block">
-                    <input class="" name="repPassword" type="password" value="" required> 
-                    <div class="input-icon">
-                        
-                    </div>
-                </div>
-                <hr class="">
             </label>
+            <div class="input-block">
+                <input id="regRepPassword" class="password repeatPassword" name="repPassword" type="password" value="" required> 
+                <div class="input-icon input-icon__eye"></div>
+            </div>
+            <hr class="inpHr">
+            <div class="errorMessage"></div>
             <button class="">
                 Зарегистрироваться
             </button>
@@ -108,7 +113,8 @@
                 в отношении обработки персональных данных и публичной офертой
             </p>
         </form>
-
+        
+    <!--Форма авторизации-->
         <div class="editingFormsBlock invisible">
             <form class="editingContactsForm">
                 <h1 class="">
@@ -117,32 +123,35 @@
                 <label class="">
                     <span>Логин*</span>
                     <div class="input-block">
-                        <input class="editingLogin" name="login" type="text" value="" required>
+                        <input class="inputLogin editingLogin" name="login" disabled >
                         <div class="input-icon">
                             
                         </div>
                     </div>
-                    <hr class="">
+                    <hr class="inpHr">
+                    <div class="errorMessage"></div>
                 </label>
                 <label class="">
                     <span>Телефон</span>
                     <div class="input-block">
-                        <input class="editingPhone" name="phone" type="tel" value="">
+                        <input class="editingPhone tel" name="phone" type="tel" value="" placeholder="+7 (999) 999 99 99" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}">
                         <div class="input-icon">
                             
                         </div>
                     </div>
-                    <hr class="">
+                    <hr class="inpHr">
+                    <div class="errorMessage"></div>
                 </label>
                 <label class="">
                     <span>E-mail</span>
                     <div class="input-block">
-                        <input class="editingEmail" name="email" type="email" value="">
+                        <input class="email editingEmail" name="email" type="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9-]+@[a-z0-9\.-]+\.[a-z]{2,4}">
                         <div class="input-icon">
                             
                         </div>
                     </div>
-                    <hr class="">
+                    <hr class="inpHr">
+                    <div class="errorMessage"></div>
                 </label>
                 <button class="editingContactsButton">
                     Сохранить изменения
@@ -152,26 +161,24 @@
             <form class="editingPasswordForm">
                 <h2 class="">Сменить пароль</h2>
                 
-                <label class="">
+                <label class="" for="editingPassword">
                     <span>Новый пароль*</span>
-                    <div class="input-block">
-                        <input class="editingPassword" name="password" type="text" value="" required>
-                        <div class="input-icon">
-                            
-                        </div>
-                    </div>
-                    <hr class="">
                 </label>
-                <label class="">
+                <div class="input-block">
+                    <input id="editingPassword" class="password editingPassword" name="password" type="password" value="" required pattern="[\D0-9]{6,}">
+                    <div class="input-icon input-icon__eye"></div>
+                </div>
+                <hr class="inpHr">
+                <div class="errorMessage"></div>
+                <label class="" for="editingRepPassword">
                     <span>Повторить новый пароль*</span>
-                    <div class="input-block">
-                        <input class="editingRepPassword" name="repPassword" type="text" value="" required>
-                        <div class="input-icon">
-                            
-                        </div>
-                    </div>
-                    <hr class="">
                 </label>
+                <div class="input-block">
+                    <input id="editingRepPassword" class="password editingRepPassword repeatPassword" name="repPassword" type="password" value="" required>
+                    <div class="input-icon input-icon__eye"></div>
+                </div>
+                <hr class="inpHr">
+                <div class="errorMessage"></div>
                 <button class="editingPasswordButton">
                     Сохранить изменения
                 </button>
@@ -180,11 +187,7 @@
             </form>
         </div>
 
-        
-       
-
     </div>
-
 
     <script type="module" src="./main.js"></script>
 </body>

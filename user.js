@@ -1,6 +1,7 @@
 
 import { getFromStorage, addToStorage } from "./functions.js";
 import { appState } from "./main.js";
+import { storageKey } from "./main.js";
 
 export class User{
   constructor(login, password, email, phone) {
@@ -8,10 +9,10 @@ export class User{
     this.password = password;
     this.email = email;
     this.phone = phone;
-    this.storageKey = "users";  
+    this.storageKey = storageKey;  
   };
   get hasAccess() {
-    let users = getFromStorage(this.storageKey);
+    let users = getFromStorage(storageKey);
     if (users.length == 0) return false;
     for (let user of users) {
       if (user.login == this.login && user.password == this.password) {
@@ -22,6 +23,6 @@ export class User{
     return false;
   };
   static save(user) {
-    addToStorage(user, user.storageKey);  
+    addToStorage(user, storageKey);  
   }
 };

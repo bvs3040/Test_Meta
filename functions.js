@@ -6,14 +6,13 @@ import { appState } from "./main.js";
 import { editingEmail } from "./main.js";
 import { editingLogin } from "./main.js";
 import { editingPhone } from "./main.js";
-import { editingPassword } from "./main.js";
-import { editingRepPassword } from "./main.js";
+import { storageKey } from "./main.js";
 
 export const authUser = function (login, password) {
     const user = new User(login, password);
     if (!user.hasAccess) return false;
     return true;
-  };
+};
   
 export const openAuthorization = function () {
     if (regForm.classList.contains('invisible')) {
@@ -34,7 +33,7 @@ export const openRegistration = function() {
 };
 
 export const openEditing = function () {
-    let usersArr = getFromStorage(appState.currentUser.storageKey);
+    let usersArr = getFromStorage(storageKey);
     usersArr.forEach((element, i) => {
         if (element.login == appState.currentUser.login) {
             appState.currentIndex = i;
@@ -44,7 +43,6 @@ export const openEditing = function () {
     editingLogin.value = appState.currentUser.login;
     editingPhone.value = appState.currentUser.phone;
     editingEmail.value = appState.currentUser.email;
-    editingPassword.value = appState.currentUser.password;
 
     if (authForm.classList.contains('invisible')) {
         regForm.classList.add('invisible');
@@ -54,20 +52,20 @@ export const openEditing = function () {
     editingFormsBlock.classList.remove('invisible');
 };
 
-export const getFromStorage = function (key) {
-    return JSON.parse(localStorage.getItem(key) || "[]");
+export const getFromStorage = function () {
+    return JSON.parse(localStorage.getItem(storageKey) || "[]");
 };
   
-export const addToStorage = function (obj, key) {
-    const storageData = getFromStorage(key);
+export const addToStorage = function (obj) {
+    const storageData = getFromStorage(storageKey);
     storageData.push(obj);
-    localStorage.setItem(key, JSON.stringify(storageData));
+    localStorage.setItem(storageKey, JSON.stringify(storageData));
 };
 
 export const createTestUser = function () {
     localStorage.clear();
-    const testUser = new User("7", "7");
-    User.save(testUser);
+    /*const testUser = new User("7", "7");
+    User.save(testUser);*/
 };
 
 export const createUser = function (login, password, email, phone) {
@@ -78,9 +76,22 @@ export const createUser = function (login, password, email, phone) {
 
 export const editingUser = function () {
     const index = appState.currentIndex;
-    const key = appState.currentUser.storageKey;
-    const usersArr = getFromStorage(key);
+    const usersArr = getFromStorage(storageKey);
     usersArr[index] = appState.currentUser;
     localStorage.clear();
-    localStorage.setItem(key, JSON.stringify(usersArr));   
+    localStorage.setItem(storageKey, JSON.stringify(usersArr));   
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
